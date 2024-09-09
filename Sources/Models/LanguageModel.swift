@@ -42,7 +42,7 @@ public class LanguageModel {
         switch shapeConstraint.type {
         case .enumerated:
             // TODO: support a set of fixed shapes (keeping the first one here)
-            minContextLength = shapeConstraint.enumeratedShapes[0][1].intValue
+            minContextLength = shapeConstraint.enumeratedShapes[0][0].intValue
             maxContextLength = minContextLength
         case .range:
             let range = inputDescription?.multiArrayConstraint?.shapeConstraint.sizeRangeForDimension[1] as? NSRange
